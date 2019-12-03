@@ -1,6 +1,6 @@
 .login{
     width: 100vw;
     height: 100vh;
-    background: url('../img/login.jpg');
+    background: url('../img/login.jpg') no-repeat;
     background-size: 100%;
   }
