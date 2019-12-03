@@ -18,6 +18,13 @@ export const routes = [
     hidden: true,
     meta: {}
   },
+  {
+    path: '/Public',
+    name: 'Public',
+    component: () => import('@/views/homepage/Public'),
+    hidden: true,
+    meta: {}
+  },
   { path: '/', redirect: '/login', hidden: true }
 ]
 

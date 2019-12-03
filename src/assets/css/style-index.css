@@ -30,6 +30,8 @@ body {
   margin: 0;
   font-size: 0.21rem;
   line-height: 1.2em;
+  border-top: 1px solid #000;
+  box-sizing: border-box;;
 }
 
 dl, dt, dd, ul, li {

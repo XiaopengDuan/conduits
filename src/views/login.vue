@@ -108,7 +108,9 @@ export default {
       this.slidedialogVisible = false
       this.$store.dispatch('user/login', this.loginForm)
       .then(() => {
-       
+        this.$router.push({
+          path: '/Public'
+        })
       })
       .catch(() => {
         this.$refs.myVerify.refresh()
