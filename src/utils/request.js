@@ -1,4 +1,5 @@
 import axios from 'axios'
+import mapping from '@/api/mapping.json'
 import { MessageBox, Message } from 'element-ui'
 import store from '@/store'
 // import { getstore } from '@/utils/auth'
@@ -15,6 +16,11 @@ service.interceptors.request.use(
         config.headers.common['ticket'] = store.getters.token
         config.headers.common['sessionid'] = md5(store.getters.jurisdiction)
     }
+    let o = mapping [config.url]
+    if (o) {
+      config.url = `/${o.name}`
+      config.baseURL = o.origin
+    }
     return config
   },
   error => {
@@ -25,11 +31,12 @@ service.interceptors.request.use(
 // response interceptor
 service.interceptors.response.use(response => {
   const res = response.data
-  if (res.code === -1) {
+  if (res.code === 92003){
     Message({
-      message: '被抢登,或者是服务器在维护', // error.message,
+      message: res.msg, // error.message,
       type: 'error'
     })
+    this.$store.dispatch('app/closeLoading')
     window.localStorage.clear()
   }
   if (res) { // 目前业务正常代码是20000

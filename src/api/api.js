@@ -1,7 +1,7 @@
 //! 正式
-export const apiUrl = 'http://huanzhewan.com.cn'
+export const apiUrl = 'http://192.168.10.21:19998'
 export const ws = 'ws://huanzhewan.com.cn'
 export default {
   // 登录
-  login: apiUrl + '/login'
+  login: '/login/toLogin'
 }

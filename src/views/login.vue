@@ -107,13 +107,13 @@ export default {
       this.$store.dispatch('app/openLoading')
       this.slidedialogVisible = false
       this.$store.dispatch('user/login', this.loginForm)
-      // .then(() => {
+      .then(() => {
        
-      // })
-      // .catch(() => {
-      //   this.$refs.myVerify.refresh()
-      //   this.$store.dispatch('app/closeLoading')
-      // })
+      })
+      .catch(() => {
+        this.$refs.myVerify.refresh()
+        this.$store.dispatch('app/closeLoading')
+      })
     },
     onFail(){
 

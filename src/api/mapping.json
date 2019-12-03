@@ -1,0 +1,9 @@
+{
+  "/login/toLogin": {
+    "name": "yZIi",
+    "describe": "用户登录获取ticket",
+    "origin": "https://39.152.209.97:440",
+    "localServiceGatewayIp": "192.168.10.23",
+    "actualIpPort": "192.168.10.23:443"
+  }
+}
