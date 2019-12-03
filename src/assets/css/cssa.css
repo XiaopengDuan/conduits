@@ -1,0 +1,89 @@
+/* 
+
+  
+  /* 列表 */
+  /* right2权限列表调整 */
+  /* right3远传水表数据分析列表调整 */
+  .right1,.right2,.right3{ 
+     height: auto!important;
+     padding-bottom: 0.2rem!important;
+   }
+   .right1 .right-content,.right2 .right-content,.right3 .right-content{
+    height: auto!important; 
+    min-height: 7.5rem!important;
+    max-height: initial!important;
+    box-sizing: border-box;
+  }
+  
+  .right3 .right-content{padding: .3rem 0 50px!important;}
+  .right2 .tablecont-box,.right3 .tablecont-box{
+    position: static!important;
+    padding-bottom: 70px!important;
+  }
+  .right1 .tablecont-box{
+    position: static!important;
+    padding-bottom: .3rem!important;
+  }
+  .right1 .pagination-foot,.right2 .pagination-foot,.right3 .pagination-foot{
+    display: flex!important;
+    bottom: .3rem!important;
+    justify-content: space-between!important;
+    align-items: center!important;
+  }
+  .right1 .shrink-line,.right2 .shrink-line,.right3 .shrink-line{
+    margin: 0 .16rem .3rem!important;
+  }
+  .right1 .top-sertch,.right2 .top-sertch,.right3 .top-sertch{
+    padding: 0!important;
+  }
+  .right1 .pagination-wrap,.right2 .pagination-wrap,.right3 .pagination-wrap{
+    bottom: .2rem!important;
+  }
+  
+  
+  
+  .nodata{
+    min-height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  .tablecont-box .sharetitle {
+    left: 0.54rem;
+    top: 0.42rem;
+    height: 0.33rem;
+    line-height: 0.33rem;
+    color: #06e8ff;
+    font-size: 0.21rem;
+    font-weight: bold;
+    background-image: none;
+    border-left: 0.06rem #06e8ff solid;
+    padding-left: 0.24rem;
+    position: absolute;
+    display: flex;
+    align-items: center
+  }
+  .tablecont-box .sharetitle .input-group-btn {
+    display: inline-block;
+    width: auto;
+    vertical-align: inherit;
+    margin-left: .2rem;
+  }
+  .table-wrap .table tr{
+    height: auto
+  }
+  .table-wrap{
+    box-sizing: border-box;
+    height: 100%;
+  }
+  .table-wrap .table{
+    height: 100%!important;
+  }
+  /* .bottom-table-box.mes{
+    overflow: auto;
+    height: 100%
+  } */
+  .bottom-table-box-khbb .col-4{
+    padding: 0.3rem 0
+  }

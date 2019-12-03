@@ -1,0 +1,180 @@
+
+  .el-table td,
+  .el-table th.is-leaf {
+    border-bottom: 1px solid #07253e !important;
+  }
+  .el-table th, .el-table tr{
+  background: #07253e !important;
+  }
+  .el-table__body tr:hover>td{
+  background-color: #1669b1 !important;
+  color:#fff;
+  }
+  .el-table__body tr.hover-row>td{
+  background-color: #1669b1 !important;
+  color:#fff;
+  }
+  .el-table--border::after,.el-table--group::after,
+  .el-table__fixed::before,.el-table__fixed::after,
+  .el-table::before{
+    background:  #07253e !important;
+  }
+  .el-table, .el-table__expanded-cell{
+    background:  #07253e !important;
+  }
+.table-customize {
+    background: #00284f !important;
+  }
+  .table-customize-cell {
+    padding: 0px 5px !important;
+    background-color: #00284f;
+    color: white;
+    font-size: .16rem;
+  }
+  .table-customize-header-row {
+    background: #07253e !important;
+    border-bottom: none;
+  }
+  .table-customize-header-row th {
+    background: #07253e !important;
+    border-bottom: none !important;
+  }
+  .table-customize-header-cell {
+    background: #07253e !important;
+    border-bottom: none;
+    color:#00E5FF;
+    font-weight: bold;
+    font-size:0.18rem;
+  }
+  .table-customize-warning-row {
+    background: #07253e !important;
+  }
+  .table-customize-warning-row td{
+    background: #07253e !important;
+    color: white;
+  }
+  .el-table__fixed-right::before, .el-table__fixed::before{
+    background: #07253e !important;
+  }
+  .el-pagination .btn-next, .el-pagination .btn-prev {background-color: transparent !important; color: #ffffff !important;font-size:0.15rem !important;}
+  .el-pagination button span {background-color: transparent !important;font-size:0.15rem !important;}
+  .el-pagination button:disabled {background-color: transparent !important;font-size:0.15rem !important;}
+  .el-pager li.active {color: #f8f10b !important;}
+  .el-pager li {background-color: transparent !important; min-width: 0.5rem !important;width: 0.26rem; height: 16px;color: #ffffff !important; font-size:0.14rem !important;}
+
+  /*定义滚动条轨道 内阴影+圆角*/
+  .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar-track
+  {
+      -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.3);
+      border-radius: 0px;
+      background-color: #003972;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar-thumb
+  {
+      border-radius: 0;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #27629d;
+  }
+
+
+  .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar
+  {
+      width: 16px;
+      height: 16px;
+      background-color: #003972;
+  }
+
+  /*定义滚动条轨道 内阴影+圆角*/
+  .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar-track
+  {
+      -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.3);
+      border-radius: 0px;
+      background-color: #003972;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  .el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar-thumb
+  {
+      border-radius: 0;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #27629d;
+  }
+
+  .el-table--scrollable-x .el-table__body-wrapper::-webkit-scrollbar
+  {
+      width: 16px;
+      height: 16px;
+      background-color: #003972;
+  }
+
+  /*定义滚动条轨道 内阴影+圆角*/
+  .el-table--scrollable-x .el-table__body-wrapper::-webkit-scrollbar-track
+  {
+      -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.3);
+      border-radius: 0px;
+      background-color: #003972;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  .el-table--scrollable-x .el-table__body-wrapper::-webkit-scrollbar-thumb
+  {
+      border-radius: 0;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #27629d;
+  }
+
+  .el-date-editor, .el-range-input, .el-picker-panel, .el-picker-panel__sidebar {
+    background: #001d40 !important;;
+    color: #ffffff;
+    border: 1px #0b4284 solid ;
+  }
+
+  .el-icon-d-arrow-left:before {
+    color: #fff;
+  }
+
+  .el-month-table td .cell {
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .el-month-table td.in-range div, .el-month-table td.in-range div:hover {
+    background: #001d40 !important;
+    color: #ffffff;
+  }
+
+  .el-date-editor .el-range-separator {
+    color: #ffffff;
+  }
+
+  .el-date-editor .el-range-input {
+    color: #ffffff;
+  }
+
+  .el-picker-panel__shortcut {
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+
+  .el-loading-mask{
+    background-color: rgba(7,31,62,.4) !important;
+  }
+
+  .el-input__inner{
+   border: 1px solid #6be9fc !important;
+  }
+
+  .el-date-table td.in-range div, .el-date-table td.in-range div:hover, .el-date-table.is-week-mode .el-date-table__row.current div, .el-date-table.is-week-mode .el-date-table__row:hover div{
+    background-color: #1e57ab !important;
+  }
+
+  .el-slider__bar{
+    background: linear-gradient(#9d2a32, #d72b34, #f4bfcb)
+  }
+
+  .el-slider__button{
+    border: 2px solid #e96076 !important;
+  }
