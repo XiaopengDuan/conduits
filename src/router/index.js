@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '@/store'
 Vue.use(VueRouter)
 
-export const routes = [
+export const constantRoutes = [
   {
     path: '/login',
     name: 'login',
@@ -22,17 +23,14 @@ export const routes = [
     component: () => import('@/views/error-page/404'),
     hidden: true
   },
-  // { path: '/', redirect: '/login', hidden: true }
-]
-// console.log(store,123)
-export const asyncRoutes = [
   { 
     path: '/homepage',
     name: 'homepage',
-    alwaysShow: true,
+    // alwaysShow: true,
     component: () => import('@/views/homepage/index.vue'),
     meta: {
       title: "大数据管理平台-用户",
+      keepAlive: true,
       permissionCode: 'CHARGE'
     },
     children: [
@@ -42,6 +40,7 @@ export const asyncRoutes = [
         component: () => import('@/views/homepage/Public2'),
         meta: {
           title: "大数据管理平台-用户列表",
+          keepAlive: true,
           permissionCode: 'CHARGE.CHARGEINDEX',
         }
       },
@@ -51,12 +50,51 @@ export const asyncRoutes = [
         component: () => import('@/views/homepage/Public'),
         meta: {
           title: "大数据管理平台-用户列表",
+          keepAlive: true,
           permissionCode: 'CHARGE.ARREAR',
         }
       },
     ]
-  }
+  },
+  { path: '*', redirect: '/404', hidden: true }
 ]
+// console.log(store,123)
+// export const asyncRoutes = [
+//   { 
+//     path: '/homepage',
+//     name: 'homepage',
+//     // alwaysShow: true,
+//     component: () => import('@/views/homepage/index.vue'),
+//     meta: {
+//       title: "大数据管理平台-用户",
+//       keepAlive: true,
+//       permissionCode: 'CHARGE'
+//     },
+//     children: [
+//       {
+//         path: '/Public2',
+//         name: 'Public2',
+//         component: () => import('@/views/homepage/Public2'),
+//         meta: {
+//           title: "大数据管理平台-用户列表",
+//           keepAlive: true,
+//           permissionCode: 'CHARGE.CHARGEINDEX',
+//         }
+//       },
+//       {
+//         path: '/Public',
+//         name: 'Public',
+//         component: () => import('@/views/homepage/Public'),
+//         meta: {
+//           title: "大数据管理平台-用户列表",
+//           keepAlive: true,
+//           permissionCode: 'CHARGE.ARREAR',
+//         }
+//       },
+//     ]
+//   },
+//   { path: '*', redirect: '/404', hidden: true }
+// ]
 let keepAliveArray = []
 function findMeta(arr, arrValue) {
   arr.forEach((value) => {
@@ -68,10 +106,20 @@ function findMeta(arr, arrValue) {
     }
   })
 }
-findMeta(asyncRoutes, keepAliveArray)
+findMeta(constantRoutes, keepAliveArray)
+store.commit('app/SET_KEEPALIVEVALUE', keepAliveArray.join())
 
-export const router = new VueRouter({
-  routes
+const createRouter = () => new VueRouter({
+  mode: 'history', // require service support
+  // scrollBehavior: () => ({y: 0}),
+  routes: constantRoutes
 })
+
+const router = createRouter()
+
+export function resetRouter() {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
+}
 
 export default router

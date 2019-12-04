@@ -1,4 +1,4 @@
-import { asyncRoutes } from '@/router'
+import { constantRoutes } from '@/router'
   const state = {
     routes: [],
     addRoutes: []
@@ -14,9 +14,9 @@ import { asyncRoutes } from '@/router'
       return new Promise(resolve => {
         let accessedRoutes
         if (data.roles.includes('admin2')) {
-          accessedRoutes = asyncRoutes || []
+          accessedRoutes = constantRoutes || []
         } else {
-          accessedRoutes = filterAsyncRoutes( asyncRoutes, data.menuPerms)
+          accessedRoutes = filterAsyncRoutes( constantRoutes, data.menuPerms)
         }
         commit('SET_ROUTES', accessedRoutes)
         resolve(accessedRoutes)

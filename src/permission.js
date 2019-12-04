@@ -1,5 +1,5 @@
-import router from './router'
-import store from './store'
+import router from '@/router'
+import store from '@/store'
 import { Message } from 'element-ui'
 import { getstore } from '@/utils/auth' // get token from cookie
 import NProgress from 'nprogress'
@@ -7,7 +7,11 @@ const whiteList = ['/login','/test', '/lostPassWord'] // no redirect whitelist
 
 router.beforeEach(async(to, from, next) => {
   NProgress.start()
-  const hasToken = getstore('ticket')
+  var hasToken;
+  if(getstore('ticket')){
+    hasToken = JSON.parse(getstore('ticket'))
+  }
+  console.log(to)
   if (hasToken) {
     if (to.path === '/login') {
       next({ path: '/' })

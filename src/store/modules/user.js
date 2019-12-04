@@ -1,14 +1,14 @@
 import md5 from 'js-md5';
 import { setstore, getstore, removestore } from '@/utils/auth'
 import { toLogin, getLoginfo, Logout } from '@/api/index'
-import router, { asyncRoutes } from '@/router'
+import router, { constantRoutes } from '@/router'
 const state = {
         name: getstore('userName') ? getstore('userName') : '',
         token: getstore('ticket') ? getstore('ticket') : '',
-        jurisdiction: getstore('permissionCode')? getstore('permissionCode'):'',
+        jurisdiction: getstore('permissionCode') ? getstore('permissionCode'):'',
         roles: [],
         menuPerms: [],
-        thispath: getstore('THISPATH') ? JSON.parse(getstore('THISPATH')) : '',
+        thispath: getstore('THISPATH') ? getstore('THISPATH') : '',
       }
 const mutations = {
         SET_TOKEN: (state, token) => {
@@ -50,16 +50,16 @@ const actions = {
           })
         },
         LOGINCHARGE({ commit },pows){
-          asyncRoutes.forEach(route => {
+          constantRoutes.forEach(route => {
             let tmp = { ...route }
-            if(tmp.meta && tmp.meta.permissionCode.indexOf('CHARGE') !== -1) {
+            console.log(tmp)
+            if(tmp.meta && tmp.meta.permissionCode && tmp.meta.permissionCode.indexOf('CHARGE') !== -1) {
               let childrenlist = tmp.children
               childrenlist.forEach(s=>{
                 if(s.meta.permissionCode === pows[0]) {
-                  let topath = tmp.path+s.path
-                  console.log(topath)
+                  // let topath = tmp.path+s.path
                   router.push({
-                    path: topath
+                    name: s.name
                   })
                   commit('THISPATH',s,name)
                   setstore('THISPATH',s.name)

@@ -2,7 +2,7 @@ import NProgress from 'nprogress'
   const state = {
     loading: false,
     exitZhengshu: true,
-    keepAliveValue: '',
+    keepAliveValue: [],
   }
   const mutations = {
     SET_LOADING: (state, loading) => {
@@ -26,7 +26,7 @@ import NProgress from 'nprogress'
     },
     changeZS(context, d){
       context.commit("SET_EXITZHENGSHU", d);
-    },
+    }
   }
 export default {
   namespaced: true,
