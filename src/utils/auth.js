@@ -14,3 +14,8 @@ export function setstore(item, params) {
   var str = JSON.stringify(params)
   localStorage[item] = str
 }
+
+// localStorage删除指定
+export function removestore(params) {
+  localStorage.removeItem(params)
+}

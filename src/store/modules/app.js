@@ -2,6 +2,7 @@ import NProgress from 'nprogress'
   const state = {
     loading: false,
     exitZhengshu: true,
+    keepAliveValue: '',
   }
   const mutations = {
     SET_LOADING: (state, loading) => {
@@ -10,6 +11,9 @@ import NProgress from 'nprogress'
     SET_EXITZHENGSHU: (state, exitZhengshu) => {
       state.exitZhengshu = exitZhengshu
     },
+    SET_KEEPALIVEVALUE: (state, keepAliveValue) => {
+      state.keepAliveValue = keepAliveValue
+    }
   }
   const actions = {
     openLoading(context){

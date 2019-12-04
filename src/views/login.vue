@@ -16,19 +16,6 @@
         :slider-text="text"
         ></slideVerify>
     </el-dialog>
-    <transition>
-      <div v-if="$store.state.app.loading" class='popContainer'>
-        <div class="loader">
-          <div class="face">
-            <div class="circle"></div>
-          </div>
-          <div class="face">
-            <div class="circle"></div>
-          </div>
-            <span style="color: white;font-size: .1rem">loading</span>
-        </div>
-      </div>
-    </transition>
     <div class="tsDiv" v-if="$store.state.app.exitZhengshu">
       <span>您需要安装<a href="../../static/credential.rar">辽阳水司大数据分析平台根证书</a>，以便于您能更安全的访问。请点击链接下载。谢谢配合! </span>
       <button @click="closeExitZhengshu()" class="tsDivClose">X</button>
@@ -108,9 +95,10 @@ export default {
       this.slidedialogVisible = false
       this.$store.dispatch('user/login', this.loginForm)
       .then(() => {
-        this.$router.push({
-          path: '/Public'
-        })
+        this.$store.dispatch('app/closeLoading')
+        // this.$router.push({
+        //   path: '/Public'
+        // })
       })
       .catch(() => {
         this.$refs.myVerify.refresh()

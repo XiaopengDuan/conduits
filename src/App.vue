@@ -1,6 +1,19 @@
 <template>
   <div id="app">
     <router-view/>
+    <transition>
+      <div v-if="$store.state.app.loading" class='popContainer'>
+        <div class="loader">
+          <div class="face">
+            <div class="circle"></div>
+          </div>
+          <div class="face">
+            <div class="circle"></div>
+          </div>
+            <span style="color: white;font-size: .1rem">loading</span>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
