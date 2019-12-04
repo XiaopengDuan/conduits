@@ -12,5 +12,12 @@
     "origin": "https://39.152.209.97:440",
     "localServiceGatewayIp": "192.168.10.23",
     "actualIpPort": "192.168.10.23:443"
+  },
+  "/login/Logout": {
+    "name": "sEUu",
+    "describe": "用户登出",
+    "origin": "https://39.152.209.97:440",
+    "localServiceGatewayIp": "192.168.10.23",
+    "actualIpPort": "192.168.10.23:443"
   }
 }

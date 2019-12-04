@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import { getToken, setToken, removeToken, setstore, getstore,removestore } from '@/utils/auth'
 export default {
   name: 'Page404',
   computed: {
@@ -32,20 +31,6 @@ export default {
   methods: {
     updatadet() {
       this.$store.dispatch('user/logout')
-      removeToken()
-      removestore('CHARGEINDEX')
-      removestore('USERCENTERINDEX')
-      removestore('WMAINGEX')
-      removestore('AUTHINDEX')
-      removestore('get01IndexIncomeTop3Statistics')
-      removestore('getArrearCommunityCountList')
-      removestore('getCommunityCallTopTen')
-      removestore('get02IndexIncomeTop6Statistics')
-      removestore('getArrearCommunityCountRadar')
-      removestore('getCommunityUseWaterRank')
-      removestore('data')
-      this.$router.go(-1)
-      location.reload()
     }
   }
 }

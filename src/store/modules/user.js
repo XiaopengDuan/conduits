@@ -1,6 +1,6 @@
 import md5 from 'js-md5';
 import { setstore, getstore, removestore } from '@/utils/auth'
-import { toLogin, getLoginfo } from '@/api/index'
+import { toLogin, getLoginfo, Logout } from '@/api/index'
 import router, { asyncRoutes } from '@/router'
 const state = {
         name: getstore('userName') ? getstore('userName') : '',
@@ -9,8 +9,6 @@ const state = {
         roles: [],
         menuPerms: [],
         thispath: getstore('THISPATH') ? JSON.parse(getstore('THISPATH')) : '',
-        wmaindex: getstore('WMAINGEX')?JSON.parse(getstore('WMAINGEX')):'',
-        userCenterindex: getstore('USERCENTERINDEX')?JSON.parse(getstore('USERCENTERINDEX')):'',
       }
 const mutations = {
         SET_TOKEN: (state, token) => {
@@ -31,15 +29,26 @@ const mutations = {
         },
         THISPATH: (state, path) => {
           state.thispath = path
-        },
-        WMAINGEX: (state,index)=>{
-          state.wmaindex = index
-        },
-        USERCENTERINDEX: (state, index)=>{
-          state.userCenterindex = index
-        },
+        }
       }
 const actions = {
+        logout() {
+          // console.log(getToken())
+          if(getstore('ticket') === 'undefined'|| getstore('ticket') === undefined){
+            router.push({
+              name: 'login'
+            })
+          }
+          Logout({ticket:getstore('ticket')}).then(()=>{
+            removestore('ticket')
+            removestore('userName')
+            removestore('permissionCode')
+            removestore('THISPATH')
+            router.push({
+              name: 'login'
+            })
+          })
+        },
         LOGINCHARGE({ commit },pows){
           asyncRoutes.forEach(route => {
             let tmp = { ...route }

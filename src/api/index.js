@@ -19,3 +19,12 @@ export function getLoginfo(data) {
         data
     })
 }
+// 退出登录
+export function Logout(data) {
+    return request({
+        url: api.Logout,
+        method: 'post',
+        baseURL: uaBaseUrl,
+        data
+    })
+}
