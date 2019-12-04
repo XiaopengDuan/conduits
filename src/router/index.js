@@ -26,7 +26,7 @@ export const constantRoutes = [
   { 
     path: '/homepage',
     name: 'homepage',
-    // alwaysShow: true,
+    alwaysShow: true,
     component: () => import('@/views/homepage/index.vue'),
     meta: {
       title: "大数据管理平台-用户",
@@ -58,43 +58,6 @@ export const constantRoutes = [
   },
   { path: '*', redirect: '/404', hidden: true }
 ]
-// console.log(store,123)
-// export const asyncRoutes = [
-//   { 
-//     path: '/homepage',
-//     name: 'homepage',
-//     // alwaysShow: true,
-//     component: () => import('@/views/homepage/index.vue'),
-//     meta: {
-//       title: "大数据管理平台-用户",
-//       keepAlive: true,
-//       permissionCode: 'CHARGE'
-//     },
-//     children: [
-//       {
-//         path: '/Public2',
-//         name: 'Public2',
-//         component: () => import('@/views/homepage/Public2'),
-//         meta: {
-//           title: "大数据管理平台-用户列表",
-//           keepAlive: true,
-//           permissionCode: 'CHARGE.CHARGEINDEX',
-//         }
-//       },
-//       {
-//         path: '/Public',
-//         name: 'Public',
-//         component: () => import('@/views/homepage/Public'),
-//         meta: {
-//           title: "大数据管理平台-用户列表",
-//           keepAlive: true,
-//           permissionCode: 'CHARGE.ARREAR',
-//         }
-//       },
-//     ]
-//   },
-//   { path: '*', redirect: '/404', hidden: true }
-// ]
 let keepAliveArray = []
 function findMeta(arr, arrValue) {
   arr.forEach((value) => {

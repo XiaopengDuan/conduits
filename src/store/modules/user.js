@@ -52,7 +52,6 @@ const actions = {
         LOGINCHARGE({ commit },pows){
           constantRoutes.forEach(route => {
             let tmp = { ...route }
-            console.log(tmp)
             if(tmp.meta && tmp.meta.permissionCode && tmp.meta.permissionCode.indexOf('CHARGE') !== -1) {
               let childrenlist = tmp.children
               childrenlist.forEach(s=>{
