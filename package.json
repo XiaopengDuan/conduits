@@ -21,7 +21,7 @@
     "nprogress": "^0.2.0",
     "sass-loader": "^8.0.0",
     "slide-verify": "^0.5.1",
-    "three": "^0.111.0",
+    "three": "^0.125.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.5",
